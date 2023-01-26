@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <div class="flex mt-1 mb-2 mx-2" id="upd">
+    <div class="flex mt-1 mb-2 mx-2" >
         <x-update-logo/>
     </div>
     <div class="flex mt-1 mb-2 mx-2">
