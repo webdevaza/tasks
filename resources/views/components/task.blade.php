@@ -5,7 +5,7 @@
             <input class="justify-center w-6 h-6" type="checkbox" {{$check}}>
         </div>
         <div class="container {{!$check ? "text-stone-800 font-bold font-sans" : "text-gray-500 line-through"}} mx-auto">
-            <a class="collapse-button">
+            <a class="collapse-button cursor-pointer">
                 <div class="flex w-full rounded bg-gray-200 ">
                     <p class="p-2">{{$task}}</p>
                 </div>
@@ -19,7 +19,7 @@
     </div>
     {{-- task-div-end --}}
     <div class="flex mt-1 mb-2 mx-2 " >
-        <a class="edit-button "><x-update-logo/></a>
+        <a class="edit-button cursor-pointer"><x-update-logo/></a>
     </div>
     <div class="flex mt-1 mb-2 mx-2">
         <x-delete-logo/>
@@ -33,6 +33,7 @@
                 <input class="border-2  border-orange-400 border-solid flex w-full rounded bg-gray-100 " type="text" name="task" value="{{$task}}">
             </div>
         </div>
+        <a class="cancel-button m-2 p-2 cursor-pointer"><x-close-button/></a>
         <button class=" m-2 p-2 bg-orange-400 rounded">Update</button>
     </form>
 </div>
