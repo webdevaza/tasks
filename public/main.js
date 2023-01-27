@@ -13,11 +13,16 @@ for (let i = 0; i < buttons.length; i++) {
 let editButtons = document.querySelectorAll(".edit-button");
 let editDivs = document.querySelectorAll(".edit-div");
 let taskDivs = document.querySelectorAll(".task-div");
+let cancelButtons = document.querySelectorAll(".cancel-button");
 
 for (let i = 0; i < buttons.length; i++) {
     editButtons[i].addEventListener("click", function() {
         editDivs[i].classList.toggle("hidden");
         taskDivs[i].classList.toggle("hidden");
         console.log('hey')
+    });
+    cancelButtons[i].addEventListener("click", function() {
+        editDivs[i].classList.toggle("hidden");
+        taskDivs[i].classList.toggle("hidden");
     });
 }

@@ -2,22 +2,23 @@
 
 1) Create all the necessary views:
     - tasks page:
-        * create tasks input
-        * list
-        * edit tasks input
+        * create tasks input --> OK
+        * list --> OK
+        * edit tasks input --> OK
+        * add datePicker
     - welcome page:
-        * navbar
-        * body
-        * footer
+        * navbar --> OK
+        * body --> OK
+        * footer --> OK
     - admin panel
-        * users list
-        * edit user part
+        * users list --> CANCEL
+        * edit user part --> CANCEL
 
 2) Edit existing views:
-    - dashboard
-    - register
-    - login
-    - profile
+    - dashboard --> OK
+    - register --> OK
+    - login --> OK
+    - profile --> OK
 
 3) Models & controllers:
     - TasksModel & TasksController
