@@ -12,18 +12,18 @@
             </form>
         </div>
     </x-slot>
-    <div class="container mx-auto pb-2">
-        <x-task-update />
-        <x-task task="Birinchi jumush" check=""/>
-        <x-task task="Ekinchi jumush" check=""/>
-        <x-task task="Uchunchu jumush" check=""/>
-        <x-task task="dfdf jumush" check=""/>
-        <x-task task="dfvdfv jumush" check=""/>
-        <x-task task="ghnghn jumush" check=""/>
-        <x-task task="hj,jk, jumush" check="checked" />
-        <x-task task="ghjumy jumush" check="checked" />
-        <x-task task="o;io jumush" check="checked" />
-        <x-task task="Tortyujuyujunchu jumush" check="checked" />
+        <x-task task="Birinchi jumush" check="" details="1 jumush"/>
+        <x-task task="Ekinchi jumush" check="" details="1 jumush"/>
+        <x-task task="Uchunchu jumush" check="" details="1 jumush"/>
+        <x-task task="dfdf jumush" check="" details="1 jumush"/>
+        <x-task task="dfvdfv jumush" check="" details="1 jumush"/>
+        <x-task task="ghnghn jumush" check="" details="1 jumush"/>
+        <x-task task="hj,jk, jumush" check="checked" details="1 jumush"/>
+        <x-task task="ghjumy jumush" check="checked" details="1 jumush"/>
+        <x-task task="ghjumy jumush" check="checked" details="1 jumush"/>
+        <x-task task="ghjumy jumush" check="checked" details="1 jumush"/>
+        <x-task task="o;io jumush" check="checked" details="1 jumush"/>
+        <x-task task="Tortyujuyujunchu jumush" check="checked" details="1 jumush"/>
         
     </div>
 </x-app-layout>

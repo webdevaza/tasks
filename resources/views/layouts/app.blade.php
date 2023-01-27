@@ -12,7 +12,6 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <script src="main.js"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-green-600">
@@ -33,4 +32,5 @@
             </main>
         </div>
     </body>
+    <script src="main.js"></script>
 </html>
