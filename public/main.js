@@ -19,10 +19,10 @@ for (let i = 0; i < buttons.length; i++) {
     editButtons[i].addEventListener("click", function() {
         editDivs[i].classList.toggle("hidden");
         taskDivs[i].classList.toggle("hidden");
-        console.log('hey')
     });
     cancelButtons[i].addEventListener("click", function() {
         editDivs[i].classList.toggle("hidden");
         taskDivs[i].classList.toggle("hidden");
     });
 }
+flatpickr(document.getElementById('date-input'), {dateFormat: "d.m.Y",minDate: "today", "locale": {"firstDayOfWeek": 1}});
