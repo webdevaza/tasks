@@ -5,6 +5,9 @@
             <form action="" method="post">
                 <div class="flex justify-center">
                     <input name="new_task" class="w-full bg-gray-100 text-gray-700 rounded h-14 border-double border-4 border-black" type="text" value="" placeholder="Type your task here.">
+                    {{-- datepicker start --}}
+                    <input id="date-input" class="flex rounded m-2 w-28 text-center" name="date" placeholder="DATE"/>
+                    {{-- datepicker end --}}
                 </div>
                 <div class="flex justify-center m-4">
                     <button class="bg-amber-300 px-4 py-2 rounded font-bold text-green-900">Add</button>
