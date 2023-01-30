@@ -19,6 +19,7 @@
     - register --> OK
     - login --> OK
     - profile --> OK
+    - make details better
 
 3) Models & controllers:
     - TasksModel & TasksController
