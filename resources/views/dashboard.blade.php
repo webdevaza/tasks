@@ -15,14 +15,23 @@
             </form>
         </div>
     </x-slot>
-        <x-task task="Birinchi jumush" check="" details="1 jumush"/>
-        <x-task task="Ekinchi jumush" check="" details="1 jumush"/>
-        <x-task task="Uchunchu jumush" check="" details="1 jumush"/>
-        <x-task task="dfdf jumush" check="" details="1 jumush"/>
-        <x-task task="dfvdfv jumush" check="" details="1 jumush"/>
-        <x-task task="ghnghn jumush" check="" details="1 jumush"/>
-        <x-task task="hj,jk, jumush" check="checked" details="1 jumush"/>
-        <x-task task="ghjumy jumush" check="checked" details="1 jumush"/>
+    @php
+        
+        $planned = "29.01.23//30.01.23//31.01.23//notYet//OK";
+        $done = "28.01.23//29.01.23//30.01.23//30.01.23//OK";
+        $doneLate = "26.01.23//noUpd//29.01.23//30.01.23//late";
+        $late = "26.01.23//noUpd//29.01.23//notYet//late";
+
+    @endphp
+    <div>
+        <x-task task="Birinchi jumush" check="" details={{$planned}}/>
+        <x-task task="Ekinchi jumush" check="" details={{$planned}}/>
+        <x-task task="Uchunchu jumush" check="" details={{$late}}/>
+        <x-task task="dfdf jumush" check="" details={{$late}}/>
+        <x-task task="dfvdfv jumush" check="" details={{$planned}}/>
+        <x-task task="ghnghn jumush" check="" details={{$late}}/>
+        <x-task task="hj,jk, jumush" check="checked" details={{$done}}/>
+        <x-task task="ghjumy jumush" check="checked" details={{$doneLate}}/>
         <x-task task="ghjumy jumush" check="checked" details="1 jumush"/>
         <x-task task="ghjumy jumush" check="checked" details="1 jumush"/>
         <x-task task="o;io jumush" check="checked" details="1 jumush"/>

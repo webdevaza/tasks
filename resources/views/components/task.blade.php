@@ -4,15 +4,23 @@
         <div class="flex justify-center items-center mx-2" >
             <input class="justify-center w-6 h-6" type="checkbox" {{$check}}>
         </div>
-        <div class="container {{!$check ? "text-stone-800 font-bold font-sans" : "text-gray-500 line-through"}} mx-auto">
+        <div class="container mx-auto">
             <a class="collapse-button cursor-pointer">
                 <div class="flex w-full rounded bg-gray-200 ">
-                    <p class="p-2">{{$task}}</p>
+                    <p class="p-2 {{!$check ? "text-stone-800 font-bold font-sans" : "text-gray-500 line-through"}}">{{$task}}</p>
                 </div>
             </a>
             {{-- collapse start --}}
             <div class="collapsible-div hidden ">
-                <p>{{$details}}</p>
+                @php
+                
+                    $cre = "29.01.23";
+                    $upd = "30.01.23";
+                    $for = "31.01.23";
+                    $on = "notYet";
+                    $status = "OK";
+                @endphp
+                <p class="m-2 {{!$check ? "text-stone-800 font-bold font-sans" : "text-gray-500"}}">The task was planned on {{$cre}} to be completed on {{$for}}. {{$upd != $cre ? "It was updated on ".$upd."." : ""}} {{$on != "notYet" ? "It was completed on ".$on."." : "It is not completed yet." }} </p>
             </div>
             {{-- collapse end --}}
         </div>
