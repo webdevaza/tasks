@@ -66,7 +66,7 @@
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
                     @auth
                     <li class="mr-3">
-                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="{{ url('/dashboard') }}">My tasks</a>
+                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="{{ route('tasks.index') }}">My tasks</a>
                     </li>
                     <a
                         id="navAction"

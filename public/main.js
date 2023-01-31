@@ -25,4 +25,5 @@ for (let i = 0; i < buttons.length; i++) {
         taskDivs[i].classList.toggle("hidden");
     });
 }
+// it is a datepicker
 flatpickr(document.getElementById('date-input'), {dateFormat: "d.m.Y",minDate: "today", "locale": {"firstDayOfWeek": 1}});
