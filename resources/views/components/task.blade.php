@@ -12,15 +12,8 @@
             </a>
             {{-- collapse start --}}
             <div class="collapsible-div hidden ">
-                @php
-                
-                    $cre = "29.01.23";
-                    $upd = "30.01.23";
-                    $for = "31.01.23";
-                    $on = "notYet";
-                    $status = "OK";
-                @endphp
-                <p class="m-2 {{!$check ? "text-stone-800 font-bold font-sans" : "text-gray-500"}}">The task was planned on {{$cre}} to be completed on {{$for}}. {{$upd != $cre ? "It was updated on ".$upd."." : ""}} {{$on != "notYet" ? "It was completed on ".$on."." : "It is not completed yet." }} </p>
+                {{-- <p class="m-2 {{!$check ? "text-stone-100 font-bold font-sans" : "text-gray-500"}}">The task was planned on {{$cre}} to be completed on {{$for}}. {{$upd != $cre ? "It was updated on ".$upd."." : ""}} {{$on != "notYet" ? "It was completed on ".$on."." : "It is not completed yet." }} </p> --}}
+                <p class="m-2 {{!$check ? "text-stone-100 font-bold font-sans" : "text-gray-500"}}">The task was planned on  </p>
             </div>
             {{-- collapse end --}}
         </div>
