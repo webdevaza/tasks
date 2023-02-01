@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->default(Auth::id());
             $table->string('task');
-            $table->date('toDoDate');
+            $table->date('toDoDate')->nullable();
             $table->date('doneDate')->nullable();
             $table->timestamps();
 
