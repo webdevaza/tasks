@@ -3,9 +3,12 @@
     {{-- task-div-start --}}
     <div class="flex gap-2 w-full">
         <div class="flex justify-center items-center mx-2" >
-            <input class="justify-center w-6 h-6" type="checkbox" {{$doneDate ? "checked" : ""}}>
+            <input class="justify-center w-6 h-6" 
+                   type="checkbox" 
+                   {{$doneDate ? "checked" : ""}}
+            />
         </div>
-        <div class="container mx-auto">
+        <div class="container mx-auto ">
             <a class="collapse-button cursor-pointer">
                 <div class="flex w-full rounded bg-gray-200 ">
                     <p class="p-2 {{!$doneDate ? "text-stone-800 font-bold font-sans" : "text-gray-500 line-through"}}">{{$task}}</p>
@@ -13,9 +16,46 @@
             </a>
             
             {{-- collapse start --}}
-            <div class="collapsible-div hidden ">
-                {{-- <p class="m-2 {{!$check ? "text-stone-100 font-bold font-sans" : "text-gray-500"}}">The task was planned on {{$cre}} to be completed on {{$for}}. {{$upd != $cre ? "It was updated on ".$upd."." : ""}} {{$on != "notYet" ? "It was completed on ".$on."." : "It is not completed yet." }} </p> --}}
-                <p class="m-2 {{!$doneDate ? "text-stone-100 font-bold font-sans" : "text-gray-500"}}">The task was planned on  </p>
+            <div class="collapsible-div hidden p-2">
+                @php
+                    //TO FULFIL
+                    $do = $toDoDate ? $toDoDate : "anytime";
+
+                    //FULFILLED
+                    $done = $doneDate ? $doneDate : "not yet";
+
+                    //ADDED: trimming createDate, getting rid of hours-minutes-seconds   
+                    $arr = explode(' ', $createDate);
+                    $added = $arr[0];
+
+                    //EDITED
+                    $edited = $editDate ? $editDate : "not edited";
+
+                    //STATUS
+                    $status = $doneDate && $doneDate == $toDoDate ? "done on time" : "LATE";
+
+                    
+                @endphp
+                <div class="flex flex-wrap">
+                    <div class="m-2 basis-auto ">
+                        <label class="m-2 text-stone-100 font-bold font-sans">TO FULFIL</label><p class="bg-lime-200 p-2 rounded w-28 text-blue-700">{{$do}}</p> 
+                    </div>
+                    <div class="m-2 basis-auto ">
+                        <label class="m-2 text-stone-100 font-bold font-sans">FULFILLED</label><p class="bg-lime-200 p-2 rounded w-28 text-blue-700">{{$done}}</p> 
+                    </div>
+                    <div class="m-2 basis-auto">
+                        <label class="m-2 text-stone-100 font-bold font-sans">ADDED</label><p class="bg-lime-200 p-2 rounded w-28 text-blue-700">{{$added}}</p> 
+                    </div>
+                    <div class="m-2 basis-auto">
+                        <label class="m-2 text-stone-100 font-bold font-sans">EDITED</label><p class="bg-lime-200 p-2 rounded w-28 text-blue-700">{{$edited}}</p> 
+                    </div>
+                    <div class="m-2 basis-auto">
+                        <label class="m-2 text-stone-100 font-bold font-sans">STATUS</label><p class="bg-lime-200 p-2 rounded w-28 text-blue-700">{{$status}}</p> 
+                    </div>
+                </div>
+                {{-- <div class="mx-2 flex">
+                    <p class="m-2 {{!$doneDate ? "text-stone-100 font-bold font-sans" : "text-gray-500"}}">The task was planned on  </p>
+                </div> --}}
             </div>
             {{-- collapse end --}}
         
