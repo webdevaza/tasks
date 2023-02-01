@@ -26,4 +26,9 @@ for (let i = 0; i < buttons.length; i++) {
     });
 }
 // it is a datepicker
-flatpickr(document.getElementById('date-input'), {dateFormat: "d.m.Y",minDate: "today", "locale": {"firstDayOfWeek": 1}});
+let toDoDate = document.getElementById('date-input')
+flatpickr(toDoDate, {dateFormat: "d.m.Y", minDate: "today", "locale": {"firstDayOfWeek": 1}});
+
+function formatDate() {
+    toDoDate.value = moment(toDoDate.value, "DD.MM.YYYY").format("YYYY-MM-DD");
+}

@@ -10,7 +10,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::where('user_id', Auth::id())->get();
+        $tasks = Task::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -18,15 +18,16 @@ class TaskController extends Controller
     {
         $validatedData = $request->validate([
             'task' => 'required|max:60',
-            'toDoDate' => 'required|date',
+            'toDoDate' => 'nullable|date',
             'doneDate' => 'nullable|date',
         ]);        
         
+        $toDoDate = $validatedData['toDoDate'] ?? null;
         $doneDate = $validatedData['doneDate'] ?? null;
 
         Task::create([
             'task' => $validatedData['task'],
-            'toDoDate' => $validatedData['toDoDate'],
+            'toDoDate' => $toDoDate,
             'doneDate' => $doneDate,
             'user_id' => Auth::id()
         ]);
