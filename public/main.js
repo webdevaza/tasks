@@ -30,5 +30,7 @@ let toDoDate = document.getElementById('date-input')
 flatpickr(toDoDate, {dateFormat: "d.m.Y", minDate: "today", "locale": {"firstDayOfWeek": 1}});
 
 function formatDate() {
-    toDoDate.value = moment(toDoDate.value, "DD.MM.YYYY").format("YYYY-MM-DD");
+    if (toDoDate.value) {
+        toDoDate.value = moment(toDoDate.value, "DD.MM.YYYY").format("YYYY-MM-DD");
+    }
 }
