@@ -94,21 +94,23 @@
     {{-- task-div-end --}}
     
     <div class="flex mt-1 mb-2 mx-2 " >
-        <a class="edit-button cursor-pointer"><x-update-logo/></a>
+        <a class="edit-button cursor-pointer"><x-task-components.update-logo/></a>
     </div>
 
     <form action="{{route('tasks.destroy',$id)}}" method="post">
         @csrf
         @method('DELETE')
         <div class="flex mt-1 mb-2 mx-2">
-            <button type="submit"><x-delete-logo/></button>
+            <button type="submit"><x-task-components.delete-logo/></button>
         </div>
     </form>
 </div>
 
 {{-- edit form start --}}
 <div class="edit-div gap-2 w-full hidden" >
-    <form class=" flex flex-row m-4" action="">
+    <form class=" flex flex-row m-4" action="{{route('tasks.update', $id)}}" method="POST">
+        {{ method_field('PUT') }}
+        @csrf
         <div class="flex m-2 w-full">
             <div class="container text-gray-900 mx-auto">
                 <input class="border-2  border-orange-400 border-solid flex w-full rounded bg-gray-100 " type="text" name="task" value="{{$task}}">
