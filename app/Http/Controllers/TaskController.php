@@ -24,15 +24,18 @@ class TaskController extends Controller
             'task' => 'required|max:60',
             'toDoDate' => 'nullable|date',
             'doneDate' => 'nullable|date',
+            'editDate' => 'nullable|date',
         ]);        
         
         $toDoDate = $validatedData['toDoDate'] ?? null;
         $doneDate = $validatedData['doneDate'] ?? null;
+        $editDate = $validatedData['editDate'] ?? null;
 
         Task::create([
             'task' => $validatedData['task'],
             'toDoDate' => $toDoDate,
             'doneDate' => $doneDate,
+            'editDate' => $editDate,
             'user_id' => Auth::id()
         ]);
         
@@ -41,7 +44,7 @@ class TaskController extends Controller
 
     public function update(Request $request, Task $task)
     {
-        $task->update($request->all());
+        $task->update(['task' => $request->input('task'),'editDate' => date('Y-m-d')]);
         return redirect()->route('tasks.index');
     }
 
