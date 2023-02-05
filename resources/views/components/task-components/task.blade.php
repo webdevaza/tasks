@@ -62,7 +62,7 @@
         </div>
         <div class="container mx-auto ">
             <a class="collapse-button cursor-pointer">
-                <div class="flex w-full rounded bg-gray-200 ">
+                <div class="flex w-full rounded bg-gray-200" title="Click to see details">
                     <p class="p-2 {{!$doneDate ? ($status == "overdue" ? $statusColor : "text-stone-800 font-bold font-sans") : "text-gray-500 line-through"}}">{{$task}}</p>
                 </div>
             </a>
@@ -94,13 +94,13 @@
     {{-- task-div-end --}}
     
     <div class="flex mt-1 mb-2 mx-2 " >
-        <a class="edit-button cursor-pointer"><x-task-components.update-logo/></a>
+        <a class="edit-button cursor-pointer" title="Click to edit this task"><x-task-components.update-logo/></a>
     </div>
 
     <form action="{{route('tasks.destroy',$id)}}" method="post">
         @csrf
         @method('DELETE')
-        <div class="flex mt-1 mb-2 mx-2">
+        <div class="flex mt-1 mb-2 mx-2" title="Delete this task">
             <button type="submit"><x-task-components.delete-logo/></button>
         </div>
     </form>
@@ -115,8 +115,13 @@
             <div class="container text-gray-900 mx-auto">
                 <input class="border-2  border-orange-400 border-solid flex w-full rounded bg-gray-100 " type="text" name="task" value="{{$task}}">
             </div>
+            {{-- <div class="date-input w-6 h-6 m-2 pt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <input name="toDoDate" class="date-input hidden"/>
+            </div> --}}
+            <div class="update-date"></div>
         </div>
-        <button class=" m-2 p-2 bg-orange-400 rounded">Update</button>
+        <button class="m-2 p-2 bg-orange-400 rounded">Update</button>
         <a class="cancel-button m-2 p-2 cursor-pointer"><x-close-button/></a>
     </form>
 </div>

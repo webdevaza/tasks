@@ -44,7 +44,9 @@ class TaskController extends Controller
 
     public function update(Request $request, Task $task)
     {
-        $task->update(['task' => $request->input('task'),'editDate' => date('Y-m-d')]);
+        $task->update(['task' => $request->input('task'),
+                       'toDoDate' => $request->input('toDoDate'), 
+                       'editDate' => date('Y-m-d')]);
         return redirect()->route('tasks.index');
     }
 
