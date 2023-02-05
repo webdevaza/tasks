@@ -5,8 +5,12 @@ let collapsibleDivs = document.querySelectorAll(".collapsible-div");
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
         collapsibleDivs[i].classList.toggle("hidden");
-        console.log('hey')
     });
+    document.addEventListener("keydown", function(e) {
+        if(e.key == "Escape" && !collapsibleDivs[i].classList.contains('hidden')) {
+            collapsibleDivs[i].classList.add("hidden");
+        }
+    })
 }
 
 // toggle the edit divs when the buttons are clicked
@@ -24,13 +28,20 @@ for (let i = 0; i < buttons.length; i++) {
         editDivs[i].classList.toggle("hidden");
         taskDivs[i].classList.toggle("hidden");
     });
+    document.addEventListener("keydown", function(e) {
+        if(e.key == "Escape" && !editDivs[i].classList.contains('hidden')) {
+            editDivs[i].classList.add("hidden");
+            taskDivs[i].classList.remove("hidden");
+        }
+    })
 }
 // it is a datepicker
 let toDoDate = document.getElementById('date-input')
 flatpickr(toDoDate, {dateFormat: "d.m.Y", minDate: "today", "locale": {"firstDayOfWeek": 1}});
 
-function formatDate() {
-    if (toDoDate.value) {
-        toDoDate.value = moment(toDoDate.value, "DD.MM.YYYY").format("YYYY-MM-DD");
-    }
-}
+// function formatDate() {
+//     if (toDoDate.value) {
+//         toDoDate.value = moment(toDoDate.value, "DD.MM.YYYY").format("YYYY-MM-DD");
+//     }
+// }
+// formatDate()
