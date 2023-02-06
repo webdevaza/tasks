@@ -27,4 +27,8 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('tasks', TaskController::class)->middleware(['auth', 'verified']);
 
+Route::put('tasks/{id}/fulfil', [TaskController::class, 'fulfil'])->name('tasks.fulfil');
+
+Route::put('tasks/{id}/unfulfil', [TaskController::class, 'unFulfil'])->name('tasks.unFulfil');
+
 require __DIR__.'/auth.php';

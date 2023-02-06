@@ -23,6 +23,8 @@ for (let i = 0; i < buttons.length; i++) {
     editButtons[i].addEventListener("click", function() {
         editDivs[i].classList.toggle("hidden");
         taskDivs[i].classList.toggle("hidden");
+        let editDate = editDivs[i].querySelector(".edit-date");
+        flatpickr(editDate, {dateFormat: "d.m.Y", minDate: "today", "locale": {"firstDayOfWeek": 1}});
     });
     cancelButtons[i].addEventListener("click", function() {
         editDivs[i].classList.toggle("hidden");
@@ -38,10 +40,3 @@ for (let i = 0; i < buttons.length; i++) {
 // it is a datepicker
 let toDoDate = document.getElementById('date-input')
 flatpickr(toDoDate, {dateFormat: "d.m.Y", minDate: "today", "locale": {"firstDayOfWeek": 1}});
-
-// function formatDate() {
-//     if (toDoDate.value) {
-//         toDoDate.value = moment(toDoDate.value, "DD.MM.YYYY").format("YYYY-MM-DD");
-//     }
-// }
-// formatDate()
