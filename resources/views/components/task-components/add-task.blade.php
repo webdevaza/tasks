@@ -9,7 +9,7 @@
             {{-- datepicker end --}}
         </div>
         <div class="flex justify-center m-4">
-            <button class="bg-amber-300 px-4 py-2 rounded font-bold text-green-900" onclick="formatDate()">Add</button>
+            <button class="bg-amber-300 px-4 py-2 rounded font-bold text-green-900">Add</button>
         </div>
     </form>
 </div>
