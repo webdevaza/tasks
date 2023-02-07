@@ -5,7 +5,7 @@
         * create tasks input --> OK
         * list --> OK
         * edit tasks input --> OK
-        * add datePicker
+        * add datePicker --> OK
     - welcome page:
         * navbar --> OK
         * body --> OK
@@ -19,20 +19,20 @@
     - register --> OK
     - login --> OK
     - profile --> OK
-    - make details better
+    - make details better --> OK
 
 3) Models & controllers:
-    - TasksModel & TasksController
+    - TasksModel & TasksController --> OK
 
 4) Auth middlewares:
-    - add them to routes
+    - add them to routes --> OK
 
 5) Migrations:
-    - create_task_table
+    - create_task_table --> OK
 
 6) Seeders:
-    - seed tasks
-    - seed users
+    - seed tasks --> CANCEL
+    - seed users --> CANCEL
 
 7) Feature tests:
     - UserController test

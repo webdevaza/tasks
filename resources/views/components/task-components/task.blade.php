@@ -69,7 +69,7 @@
                        class="justify-center w-6 h-6" 
                        type="checkbox" 
                        {{$doneDate ? "checked" : ""}}
-                       {{-- onchange="this.closest('form').submit();return false;" --}}
+                       onchange="this.closest('form').submit();return false;"
                 />
             </form>
             {{-- check form end --}}
