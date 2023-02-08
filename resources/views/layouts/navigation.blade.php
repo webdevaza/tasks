@@ -15,6 +15,12 @@
                     <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
                         {{ __('All tasks') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('tasks.doneIndex')" :active="request()->routeIs('tasks.doneIndex')">
+                        {{ __('Fulfilled tasks') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('tasks.toDoIndex')" :active="request()->routeIs('tasks.toDoIndex')">
+                        {{ __('Tasks to fulfil') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -69,6 +75,12 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
                 {{ __('All tasks') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('tasks.doneIndex')" :active="request()->routeIs('tasks.doneIndex')">
+                {{ __('Fulfilled tasks') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('tasks.toDoIndex')" :active="request()->routeIs('tasks.toDoIndex')">
+                {{ __('Tasks to fulfil') }}
             </x-responsive-nav-link>
         </div>
 
