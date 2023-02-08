@@ -25,10 +25,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('tasks', TaskController::class)->middleware(['auth', 'verified']);
+Route::resource('tasks', TaskController::class)->middleware(['auth', 'verified'])->only(['index','store', 'update', 'destroy']);
 
-Route::put('tasks/{id}/fulfil', [TaskController::class, 'fulfil'])->name('tasks.fulfil');
+Route::get('tasks/fulfilled', [TaskController::class, 'doneIndex'])->name('tasks.doneIndex')->middleware(['auth', 'verified']);
 
-Route::put('tasks/{id}/unfulfil', [TaskController::class, 'unFulfil'])->name('tasks.unFulfil');
+Route::get('tasks/tofulfil', [TaskController::class, 'toDoIndex'])->name('tasks.toDoIndex')->middleware(['auth', 'verified']);
+
+Route::put('tasks/{id}/fulfil', [TaskController::class, 'fulfil'])->name('tasks.fulfil')->middleware(['auth', 'verified']);
+
+Route::put('tasks/{id}/unfulfil', [TaskController::class, 'unFulfil'])->name('tasks.unFulfil')->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

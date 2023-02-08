@@ -20,6 +20,32 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks'));
     }
 
+    // showing done tasks
+    public function doneIndex()
+    {
+        $tasks = Task::where('user_id', Auth::id())
+                ->where('doneDate',"!=", null)
+                ->orderBy('doneDate', 'asc')
+                ->orderBy('created_at', 'desc')
+                ->orderBy('editDate', 'desc')
+                ->orderBy('toDoDate', 'asc')
+                ->get();
+        return view('tasks.index', compact('tasks'));
+    }
+
+    // showing toDo tasks
+    public function toDoIndex()
+    {
+        $tasks = Task::where('user_id', Auth::id())
+                ->where('doneDate', null)
+                ->orderBy('doneDate', 'asc')
+                ->orderBy('created_at', 'desc')
+                ->orderBy('editDate', 'desc')
+                ->orderBy('toDoDate', 'asc')
+                ->get();
+        return view('tasks.index', compact('tasks'));
+    }
+
     // creating a task
     public function store(Request $request)
     {
