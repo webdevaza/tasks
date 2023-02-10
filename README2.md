@@ -35,8 +35,8 @@
     - seed users --> CANCEL
 
 7) Feature tests:
-    - UserController test
-    - TasksController test
+    - UserController test --> it was already written by default
+    - TasksController test --> it should be finished very soon
 
 8) Github Actions:
     - CI
