@@ -39,7 +39,7 @@
     - TasksController test --> it should be finished very soon
 
 8) Github Actions:
-    - CI
+    - CI --> and this should be written as well
 
 9) Deploy to Vercel || 000webhost || InfinityFree
     - CD
