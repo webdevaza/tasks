@@ -37,9 +37,3 @@
 7) Feature tests:
     - UserController test --> it was already written by default
     - TasksController test --> it should be finished very soon
-
-8) Github Actions:
-    - CI --> and this should be written as well
-
-9) Deploy to Vercel || 000webhost || InfinityFree
-    - CD
